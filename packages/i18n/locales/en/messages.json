@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "description": "Youtube analytics extension name",
+    "message": "Youtube Analytics"
+  },
+  "extensionName": {
+    "description": "Youtube analytics extension name",
+    "message": "Youtube Analytics Extension"
+  },
+  "toggleTheme": {
+    "message": "Toggle theme"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "greeting": {
+    "description": "Greeting message",
+    "message": "Hello, My name is $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "John Doe"
+      }
+    }
+  },
+  "hello": {
+    "description": "Placeholder example",
+    "message": "Hello $1"
+  }
+}

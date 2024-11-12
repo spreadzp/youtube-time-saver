@@ -1,0 +1,53 @@
+{
+  "name": "@extension/popup",
+  "version": "0.3.3",
+  "description": "chrome extension - popup",
+  "private": true,
+  "sideEffects": true,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "clean:node_modules": "pnpx rimraf node_modules",
+    "clean:turbo": "rimraf .turbo",
+    "clean": "pnpm clean:turbo && pnpm clean:node_modules",
+    "build": "vite build",
+    "dev": "cross-env __DEV__=true vite build --mode development",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "pnpm lint --fix",
+    "prettier": "prettier . --write --ignore-path ../../.prettierignore",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@extension/content-runtime-script": "workspace:*",
+    "@extension/i18n": "workspace:*",
+    "@extension/shared": "workspace:*",
+    "@extension/storage": "workspace:*",
+    "@particle-network/aa": "^2.0.2",
+    "@particle-network/auth-core": "^2.0.4",
+    "@particle-network/authkit": "^2.0.16",
+    "@particle-network/wallet": "^2.0.6",
+    "@xenova/transformers": "^2.17.2",
+    "ethers": "^6.13.4",
+    "openai": "^4.71.1",
+    "react-tabs": "^6.0.2",
+    "react-tooltip": "^5.28.0",
+    "react-youtube": "^10.1.0",
+    "viem": "2",
+    "youtube-transcript": "^1.2.1",
+    "zustand": "^5.0.1"
+  },
+  "devDependencies": {
+    "@extension/tailwindcss-config": "workspace:*",
+    "@extension/tsconfig": "workspace:*",
+    "@extension/vite-config": "workspace:*",
+    "cross-env": "^7.0.3",
+    "postcss-load-config": "^6.0.1"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  }
+}
