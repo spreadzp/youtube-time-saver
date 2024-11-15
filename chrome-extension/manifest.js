@@ -5,12 +5,12 @@ const packageJson = JSON.parse(fs.readFileSync('../package.json', 'utf8'));
 
 const isFirefox = process.env.__FIREFOX__ === 'true';
 
-const sidePanelConfig = {
-  side_panel: {
-    default_path: 'side-panel/index.html',
-  },
-  permissions: ['sidePanel'],
-};
+// const sidePanelConfig = {
+//   side_panel: {
+//     default_path: 'side-panel/index.html',
+//   },
+//   permissions: ['sidePanel'],
+// };
 
 /**
  * After changing, please reload the extension at `chrome://extensions`
@@ -28,7 +28,7 @@ const manifest = deepmerge(
     version: packageJson.version,
     description: '__MSG_extensionDescription__',
     host_permissions: ['<all_urls>'],
-    permissions: ['storage', 'scripting', 'tabs', 'notifications', 'activeTab'],
+    permissions: ['storage', 'scripting', 'tabs'],
     options_page: 'options/index.html',
     background: {
       service_worker: 'background.iife.js',
@@ -65,12 +65,12 @@ const manifest = deepmerge(
         matches: ['*://*/*'],
       },
     ],
-    "content_security_policy": {
-      "extension_pages": "script-src 'self'; object-src 'self'"
-    }
+    content_security_policy: {
+      extension_pages: "script-src 'self'  'wasm-unsafe-eval' ",
+    },
   },
 
-  !isFirefox && sidePanelConfig,
+  !isFirefox,
 );
 
 export default manifest;

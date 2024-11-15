@@ -1,30 +1,291 @@
 {
   "extensionDescription": {
-    "description": "Youtube analytics extension name",
-    "message": "Youtube Analytics"
+    "description": "Extension description",
+    "message": "Save time by getting instant AI-powered summaries of YouTube videos"
   },
   "extensionName": {
-    "description": "Youtube analytics extension name",
-    "message": "Youtube Analytics Extension"
+    "description": "Extension name",
+    "message": "YouTube Time Saver"
   },
-  "toggleTheme": {
-    "message": "Toggle theme"
+  "common": {
+    "message": "Common",
+    "save": {
+      "message": "Save"
+    },
+    "supportProject": {
+      "message": "Support the Project"
+    },
+    "languages": {
+      "english": {
+        "message": "English"
+      },
+      "chinese": {
+        "message": "Chinese"
+      },
+      "japanese": {
+        "message": "Japanese"
+      },
+      "korean": {
+        "message": "Korean"
+      },
+      "spanish": {
+        "message": "Spanish"
+      },
+      "french": {
+        "message": "French"
+      },
+      "german": {
+        "message": "German"
+      },
+      "italian": {
+        "message": "Italian"
+      },
+      "russian": {
+        "message": "Russian"
+      },
+      "portuguese": {
+        "message": "Portuguese"
+      }
+    },
+    "loading": {
+      "message": "Loading..."
+    },
+    "toggleTheme": {
+      "message": "Toggle theme"
+    },
+    "error": {
+      "message": "Error occurred"
+    }
   },
-  "loading": {
-    "message": "Loading..."
+  "tabs": {
+    "message": "Tabs",
+    "youtube": {
+      "message": "YouTube"
+    },
+    "ai": {
+      "message": "AI Analysis"
+    },
+    "aiFree": {
+      "message": "Free AI"
+    },
+    "help": {
+      "message": "Help"
+    },
+    "settings": {
+      "message": "Settings"
+    },
+    "about": {
+      "message": "About"
+    }
   },
-  "greeting": {
-    "description": "Greeting message",
-    "message": "Hello, My name is $NAME$",
-    "placeholders": {
-      "name": {
-        "content": "$1",
-        "example": "John Doe"
+  "youtubeTab": {
+    "message": "YouTube Video",
+    "title": {
+      "message": "YouTube"
+    },
+    "description": {
+      "message": "YouTube video settings"
+    },
+    "getTranscript": {
+      "message": "Get Transcript"
+    },
+    "analyze": {
+      "message": "Analyze"
+    },
+    "download": {
+      "message": "Download"
+    }
+  },
+  "aiTab": {
+    "message": "AI Summary",
+    "title": {
+      "message": "AI Analysis"
+    },
+    "description": {
+      "message": "Analyze your video transcript using AI"
+    },
+    "outputLanguage": {
+      "message": "Output Language"
+    },
+    "apiKey": {
+      "message": "API Key"
+    },
+    "enterApiKey": {
+      "message": "Enter your API key"
+    },
+    "systemPrompt": {
+      "message": "System Prompt"
+    },
+    "systemPromptPlaceholder": {
+      "message": "Enter system prompt..."
+    },
+    "userPrompt": {
+      "message": "User Prompt"
+    },
+    "userPromptPlaceholder": {
+      "message": "Enter user prompt..."
+    },
+    "analyzing": {
+      "message": "Analyzing..."
+    },
+    "analyze": {
+      "message": "Analyze"
+    },
+    "analysisResult": {
+      "message": "Analysis Result"
+    },
+    "downloadText": {
+      "message": "Download Text"
+    },
+    "setApiKey": {
+      "message": "Please set your API key in the Settings tab first"
+    }
+  },
+  "aiFreeTab": {
+    "message": "Free AI Summary",
+    "title": {
+      "message": "Free AI Analysis"
+    },
+    "description": {
+      "message": "Analyze your video using free AI models"
+    }
+  },
+  "settingsTab": {
+    "message": "Settings",
+    "title": {
+      "message": "Settings"
+    },
+    "description": {
+      "message": "Configure your extension settings"
+    },
+    "apiSettings": {
+      "title": {
+        "message": "API Settings"
+      },
+      "description": {
+        "message": "Configure your API keys"
+      },
+      "newTitle": {
+        "message": "Enter API Key and AI Model Name"
+      },
+      "apiKey": {
+        "label": {
+          "message": "API Key"
+        },
+        "placeholder": {
+          "message": "Enter API Key"
+        }
+      },
+      "modelName": {
+        "label": {
+          "message": "Model Name"
+        },
+        "placeholder": {
+          "message": "Enter Model Name"
+        }
+      },
+      "alerts": {
+        "enterKey": {
+          "message": "Please enter your API key in the Settings tab"
+        },
+        "success": {
+          "message": "API key saved successfully!"
+        }
       }
     }
   },
-  "hello": {
-    "description": "Placeholder example",
-    "message": "Hello $1"
+  "helpTab": {
+    "message": "Help & Feedback",
+    "title": {
+      "message": "Help"
+    },
+    "description": {
+      "message": "Get help and support"
+    },
+    "howToUse": {
+      "title": {
+        "message": "How to Use"
+      },
+      "description": {
+        "message": "Learn how to use YouTube Time Saver effectively"
+      },
+      "steps": {
+        "message": "Follow these steps"
+      }
+    },
+    "quickGuide": {
+      "title": {
+        "message": "Quick Guide"
+      },
+      "steps": {
+        "step1": {
+          "message": "Open a YouTube video"
+        },
+        "step2": {
+          "message": "Click on the extension icon"
+        },
+        "step3": {
+          "message": "Choose your analysis options"
+        },
+        "step4": {
+          "message": "Click Analyze"
+        },
+        "step5": {
+          "message": "View your results"
+        }
+      }
+    },
+    "feedback": {
+      "title": {
+        "message": "Send Feedback"
+      },
+      "description": {
+        "message": "Help us improve by sending your feedback"
+      },
+      "placeholder": {
+        "message": "Type your feedback here..."
+      },
+      "submit": {
+        "message": "Submit Feedback"
+      }
+    }
+  },
+  "aboutTab": {
+    "message": "About",
+    "title": {
+      "message": "About YouTube Time Saver"
+    },
+    "description": {
+      "message": "A powerful browser extension that helps you save time on YouTube"
+    },
+    "version": {
+      "message": "Version"
+    },
+    "copyright": {
+      "message": "2024 YouTube Time Saver. All rights reserved.",
+      "description": "Copyright notice"
+    },
+    "features": {
+      "title": {
+        "message": "Features"
+      },
+      "list": {
+        "youtubeIntegration": {
+          "message": "Seamless YouTube integration"
+        },
+        "transcripts": {
+          "message": "Quick access to transcripts"
+        },
+        "aiSummaries": {
+          "message": "AI summaries in multiple languages"
+        },
+        "apiOptions": {
+          "message": "Affordable API key options via DeepSeek"
+        },
+        "support": {
+          "message": "Direct support and regular updates from the developer"
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,287 @@
+{
+  "extensionDescription": {
+    "description": "Extension description",
+    "message": "通过获取即时AI驱动的YouTube视频摘要来节省时间"
+  },
+  "extensionName": {
+    "description": "Extension name",
+    "message": "YouTube Time Saver"
+  },
+  "common": {
+    "message": "通用",
+    "save": {
+      "message": "保存"
+    },
+    "supportProject": {
+      "message": "支持项目"
+    },
+    "languages": {
+      "english": {
+        "message": "English"
+      },
+      "chinese": {
+        "message": "中文"
+      },
+      "japanese": {
+        "message": "日本語"
+      },
+      "korean": {
+        "message": "韩国语"
+      },
+      "spanish": {
+        "message": "Español"
+      },
+      "french": {
+        "message": "Français"
+      },
+      "german": {
+        "message": "Deutsch"
+      },
+      "italian": {
+        "message": "Italiano"
+      },
+      "russian": {
+        "message": "Русский"
+      },
+      "portuguese": {
+        "message": "Português"
+      }
+    },
+    "loading": {
+      "message": "加载中..."
+    },
+    "toggleTheme": {
+      "message": "切换主题"
+    },
+    "error": {
+      "message": "发生错误"
+    }
+  },
+  "tabs": {
+    "message": "标签页",
+    "youtube": {
+      "message": "YouTube"
+    },
+    "ai": {
+      "message": "AI分析"
+    },
+    "aiFree": {
+      "message": "免费AI"
+    },
+    "help": {
+      "message": "帮助"
+    },
+    "settings": {
+      "message": "设置"
+    },
+    "about": {
+      "message": "关于"
+    }
+  },
+  "youtubeTab": {
+    "message": "YouTube视频",
+    "title": {
+      "message": "YouTube"
+    },
+    "description": {
+      "message": "YouTube视频设置"
+    },
+    "getTranscript": {
+      "message": "获取字幕"
+    },
+    "analyze": {
+      "message": "分析"
+    },
+    "download": {
+      "message": "下载"
+    }
+  },
+  "aiTab": {
+    "message": "AI摘要",
+    "title": {
+      "message": "AI分析"
+    },
+    "description": {
+      "message": "使用AI分析视频字幕"
+    },
+    "outputLanguage": {
+      "message": "输出语言"
+    },
+    "apiKey": {
+      "message": "API密钥"
+    },
+    "enterApiKey": {
+      "message": "请输入您的API密钥"
+    },
+    "systemPrompt": {
+      "message": "系统提示词"
+    },
+    "systemPromptPlaceholder": {
+      "message": "输入系统提示词..."
+    },
+    "userPrompt": {
+      "message": "用户提示词"
+    },
+    "userPromptPlaceholder": {
+      "message": "输入用户提示词..."
+    },
+    "analyzing": {
+      "message": "分析中..."
+    },
+    "analyze": {
+      "message": "分析"
+    },
+    "analysisResult": {
+      "message": "分析结果"
+    },
+    "downloadText": {
+      "message": "下载文本"
+    },
+    "setApiKey": {
+      "message": "请先在设置标签页中设置您的API密钥"
+    }
+  },
+  "aiFreeTab": {
+    "message": "免费AI摘要",
+    "title": {
+      "message": "免费AI分析"
+    },
+    "description": {
+      "message": "使用免费AI模型分析您的视频"
+    }
+  },
+  "settingsTab": {
+    "message": "设置",
+    "title": {
+      "message": "设置"
+    },
+    "description": {
+      "message": "配置您的扩展设置"
+    },
+    "apiSettings": {
+      "title": {
+        "message": "API设置"
+      },
+      "description": {
+        "message": "配置您的API密钥"
+      },
+      "newTitle": {
+        "message": "输入API密钥和AI模型名称"
+      },
+      "apiKey": {
+        "label": {
+          "message": "API密钥"
+        },
+        "placeholder": {
+          "message": "输入API密钥"
+        }
+      },
+      "modelName": {
+        "label": {
+          "message": "模型名称"
+        },
+        "placeholder": {
+          "message": "输入模型名称"
+        }
+      },
+      "alerts": {
+        "enterKey": {
+          "message": "请在设置标签页中输入您的API密钥"
+        },
+        "success": {
+          "message": "API密钥保存成功！"
+        }
+      }
+    }
+  },
+  "helpTab": {
+    "message": "帮助和反馈",
+    "title": {
+      "message": "帮助"
+    },
+    "description": {
+      "message": "了解如何有效使用YouTube Time Saver"
+    },
+    "howToUse": {
+      "title": {
+        "message": "使用方法"
+      },
+      "description": {
+        "message": "了解如何有效使用YouTube Time Saver"
+      },
+      "steps": {
+        "message": "请按照以下步骤操作"
+      }
+    },
+    "quickGuide": {
+      "title": {
+        "message": "快速指南"
+      },
+      "steps": {
+        "step1": {
+          "message": "打开YouTube视频"
+        },
+        "step2": {
+          "message": "点击扩展图标"
+        },
+        "step3": {
+          "message": "选择分析选项"
+        },
+        "step4": {
+          "message": "点击分析"
+        },
+        "step5": {
+          "message": "查看结果"
+        }
+      }
+    },
+    "feedback": {
+      "title": {
+        "message": "发送反馈"
+      },
+      "description": {
+        "message": "通过发送反馈帮助我们改进"
+      },
+      "placeholder": {
+        "message": "在此输入您的反馈..."
+      },
+      "submit": {
+        "message": "提交反馈"
+      }
+    }
+  },
+  "aboutTab": {
+    "message": "关于",
+    "title": {
+      "message": "关于YouTube Time Saver"
+    },
+    "description": {
+      "message": "一个强大的浏览器扩展，帮助您在YouTube上节省时间"
+    },
+    "features": {
+      "title": {
+        "message": "功能特点"
+      },
+      "list": {
+        "youtubeIntegration": {
+          "message": "无缝YouTube集成"
+        },
+        "transcripts": {
+          "message": "快速访问字幕"
+        },
+        "aiSummaries": {
+          "message": "多语言AI摘要"
+        },
+        "apiOptions": {
+          "message": "通过DeepSeek提供实惠的API密钥选项"
+        },
+        "support": {
+          "message": "开发者直接支持和定期更新"
+        }
+      }
+    },
+    "author": {
+      "message": "请我喝杯咖啡"
+    }
+  }
+}

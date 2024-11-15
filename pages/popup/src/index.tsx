@@ -1,8 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import '@src/index.css';
 import Popup from '@src/Popup';
-import { ParticleAuthkit } from './components/common/auth/ParticleAuthkit';
-
 
 function init() {
   const appContainer = document.querySelector('#app-container');
@@ -11,7 +9,7 @@ function init() {
   }
   const root = createRoot(appContainer);
 
-  root.render(<ParticleAuthkit><Popup /></ParticleAuthkit>);
+  root.render(<Popup />);
 }
 
 init();

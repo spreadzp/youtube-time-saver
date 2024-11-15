@@ -1,0 +1,291 @@
+{
+  "extensionDescription": {
+    "description": "Extension description",
+    "message": "Экономьте время с мгновенными AI-обработанными сводками YouTube-видео"
+  },
+  "extensionName": {
+    "description": "Extension name",
+    "message": "YouTube Time Saver"
+  },
+  "common": {
+    "message": "Общее",
+    "save": {
+      "message": "Сохранить"
+    },
+    "supportProject": {
+      "message": "Поддержать проект"
+    },
+    "languages": {
+      "english": {
+        "message": "English"
+      },
+      "chinese": {
+        "message": "中文"
+      },
+      "japanese": {
+        "message": "日本語"
+      },
+      "korean": {
+        "message": "한국어"
+      },
+      "spanish": {
+        "message": "Español"
+      },
+      "french": {
+        "message": "Français"
+      },
+      "german": {
+        "message": "Deutsch"
+      },
+      "italian": {
+        "message": "Italiano"
+      },
+      "russian": {
+        "message": "Русский"
+      },
+      "portuguese": {
+        "message": "Português"
+      }
+    },
+    "loading": {
+      "message": "Загрузка..."
+    },
+    "toggleTheme": {
+      "message": "Переключить тему"
+    },
+    "error": {
+      "message": "Произошла ошибка"
+    }
+  },
+  "tabs": {
+    "message": "Вкладки",
+    "youtube": {
+      "message": "YouTube"
+    },
+    "ai": {
+      "message": "AI анализ"
+    },
+    "aiFree": {
+      "message": "Бесплатный AI"
+    },
+    "help": {
+      "message": "Помощь"
+    },
+    "settings": {
+      "message": "Настройки"
+    },
+    "about": {
+      "message": "О расширении"
+    }
+  },
+  "youtubeTab": {
+    "message": "YouTube видео",
+    "title": {
+      "message": "YouTube"
+    },
+    "description": {
+      "message": "Настройки YouTube видео"
+    },
+    "getTranscript": {
+      "message": "Получить субтитры"
+    },
+    "analyze": {
+      "message": "Анализировать"
+    },
+    "download": {
+      "message": "Скачать"
+    }
+  },
+  "aiTab": {
+    "message": "AI анализ",
+    "title": {
+      "message": "AI анализ"
+    },
+    "description": {
+      "message": "Анализируйте субтитры видео с помощью AI"
+    },
+    "outputLanguage": {
+      "message": "Язык вывода"
+    },
+    "apiKey": {
+      "message": "API ключ"
+    },
+    "enterApiKey": {
+      "message": "Введите ваш API ключ"
+    },
+    "systemPrompt": {
+      "message": "Системный запрос"
+    },
+    "systemPromptPlaceholder": {
+      "message": "Введите системный запрос..."
+    },
+    "userPrompt": {
+      "message": "Пользовательский запрос"
+    },
+    "userPromptPlaceholder": {
+      "message": "Введите пользовательский запрос..."
+    },
+    "analyzing": {
+      "message": "Анализ..."
+    },
+    "analyze": {
+      "message": "Анализировать"
+    },
+    "analysisResult": {
+      "message": "Результат анализа"
+    },
+    "downloadText": {
+      "message": "Скачать текст"
+    },
+    "setApiKey": {
+      "message": "Пожалуйста, сначала установите API ключ в настройках"
+    }
+  },
+  "aiFreeTab": {
+    "message": "Бесплатный AI анализ",
+    "title": {
+      "message": "Бесплатный AI анализ"
+    },
+    "description": {
+      "message": "Анализируйте видео с помощью бесплатных AI моделей"
+    }
+  },
+  "settingsTab": {
+    "message": "Настройки",
+    "title": {
+      "message": "Настройки"
+    },
+    "description": {
+      "message": "Настройте параметры расширения"
+    },
+    "apiSettings": {
+      "title": {
+        "message": "Настройки API"
+      },
+      "description": {
+        "message": "Настройте ваши API ключи"
+      },
+      "newTitle": {
+        "message": "Введите API ключ и название AI модели"
+      },
+      "apiKey": {
+        "label": {
+          "message": "API ключ"
+        },
+        "placeholder": {
+          "message": "Введите API ключ"
+        }
+      },
+      "modelName": {
+        "label": {
+          "message": "Название модели"
+        },
+        "placeholder": {
+          "message": "Введите название модели"
+        }
+      },
+      "alerts": {
+        "enterKey": {
+          "message": "Пожалуйста, введите ваш API ключ в настройках"
+        },
+        "success": {
+          "message": "API ключ успешно сохранен!"
+        }
+      }
+    }
+  },
+  "helpTab": {
+    "message": "Помощь и обратная связь",
+    "title": {
+      "message": "Помощь"
+    },
+    "description": {
+      "message": "Получите помощь и поддержку"
+    },
+    "howToUse": {
+      "title": {
+        "message": "Как использовать"
+      },
+      "description": {
+        "message": "Узнайте, как эффективно использовать YouTube Time Saver"
+      },
+      "steps": {
+        "message": "Следуйте этим шагам"
+      }
+    },
+    "quickGuide": {
+      "title": {
+        "message": "Краткое руководство"
+      },
+      "steps": {
+        "step1": {
+          "message": "Откройте видео на YouTube"
+        },
+        "step2": {
+          "message": "Нажмите на значок расширения"
+        },
+        "step3": {
+          "message": "Выберите параметры анализа"
+        },
+        "step4": {
+          "message": "Нажмите Анализировать"
+        },
+        "step5": {
+          "message": "Просмотрите результаты"
+        }
+      }
+    },
+    "feedback": {
+      "title": {
+        "message": "Отправить отзыв"
+      },
+      "description": {
+        "message": "Помогите нам улучшить расширение, отправив ваш отзыв"
+      },
+      "placeholder": {
+        "message": "Напишите ваш отзыв здесь..."
+      },
+      "submit": {
+        "message": "Отправить отзыв"
+      }
+    }
+  },
+  "aboutTab": {
+    "message": "О расширении",
+    "title": {
+      "message": "О YouTube Time Saver"
+    },
+    "description": {
+      "message": "Мощное расширение браузера, которое помогает экономить время на YouTube"
+    },
+    "version": {
+      "message": "Версия"
+    },
+    "copyright": {
+      "message": "2024 YouTube Time Saver. Все права защищены.",
+      "description": "Уведомление об авторских правах"
+    },
+    "features": {
+      "title": {
+        "message": "Возможности"
+      },
+      "list": {
+        "youtubeIntegration": {
+          "message": "Плавная интеграция с YouTube"
+        },
+        "transcripts": {
+          "message": "Быстрый доступ к субтитрам"
+        },
+        "aiSummaries": {
+          "message": "AI сводки на нескольких языках"
+        },
+        "apiOptions": {
+          "message": "Доступные варианты API ключей через DeepSeek"
+        },
+        "support": {
+          "message": "Прямая поддержка и регулярные обновления от разработчика"
+        }
+      }
+    }
+  }
+}

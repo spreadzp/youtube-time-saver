@@ -1,30 +1,287 @@
 {
   "extensionDescription": {
-    "description": "Extension description",
-    "message": "React, Typescript, Vite를 사용한 크롬 익스텐션 보일러플레이트입니다."
+    "description": "확장 프로그램 설명",
+    "message": "AI 기반 YouTube 동영상 요약으로 시간을 절약하세요"
   },
   "extensionName": {
-    "description": "Extension name",
-    "message": "크롬 익스텐션 보일러플레이트"
+    "description": "확장 프로그램 이름",
+    "message": "YouTube Time Saver"
   },
-  "toggleTheme": {
-    "message": "테마 변경"
-  },
-  "loading": {
-    "message": "로딩 중..."
-  },
-  "greeting": {
-    "description": "인사 메시지",
-    "message": "안녕하세요, 제 이름은 $NAME$입니다.",
-    "placeholders": {
-      "name": {
-        "content": "$1",
-        "example": "서종학"
+  "common": {
+    "message": "공통",
+    "save": {
+      "message": "저장"
+    },
+    "supportProject": {
+      "message": "프로젝트 후원하기"
+    },
+    "loading": {
+      "message": "로딩 중..."
+    },
+    "error": {
+      "message": "오류가 발생했습니다"
+    },
+    "toggleTheme": {
+      "message": "테마 변경"
+    },
+    "languages": {
+      "english": {
+        "message": "영어"
+      },
+      "chinese": {
+        "message": "중국어"
+      },
+      "japanese": {
+        "message": "일본어"
+      },
+      "korean": {
+        "message": "한국어"
+      },
+      "spanish": {
+        "message": "스페인어"
+      },
+      "french": {
+        "message": "프랑스어"
+      },
+      "german": {
+        "message": "독일어"
+      },
+      "italian": {
+        "message": "이탈리아어"
+      },
+      "russian": {
+        "message": "러시아어"
+      },
+      "portuguese": {
+        "message": "포르투갈어"
       }
     }
   },
-  "hello": {
-    "description": "Placeholder 예시",
-    "message": "안녕 $1"
+  "tabs": {
+    "message": "탭",
+    "youtube": {
+      "message": "유튜브"
+    },
+    "ai": {
+      "message": "AI 분석"
+    },
+    "aiFree": {
+      "message": "무료 AI"
+    },
+    "settings": {
+      "message": "설정"
+    },
+    "help": {
+      "message": "도움말"
+    },
+    "about": {
+      "message": "정보"
+    }
+  },
+  "youtubeTab": {
+    "message": "유튜브",
+    "title": {
+      "message": "유튜브"
+    },
+    "description": {
+      "message": "유튜브 동영상 설정"
+    },
+    "getTranscript": {
+      "message": "자막 가져오기"
+    },
+    "analyze": {
+      "message": "분석"
+    },
+    "download": {
+      "message": "다운로드"
+    }
+  },
+  "aiTab": {
+    "message": "AI 분석",
+    "title": {
+      "message": "AI 분석"
+    },
+    "description": {
+      "message": "AI를 사용하여 동영상 스크립트 분석"
+    },
+    "outputLanguage": {
+      "message": "출력 언어"
+    },
+    "apiKey": {
+      "message": "API 키"
+    },
+    "enterApiKey": {
+      "message": "API 키를 입력하세요"
+    },
+    "systemPrompt": {
+      "message": "시스템 프롬프트"
+    },
+    "systemPromptPlaceholder": {
+      "message": "시스템 프롬프트 입력..."
+    },
+    "userPrompt": {
+      "message": "사용자 프롬프트"
+    },
+    "userPromptPlaceholder": {
+      "message": "사용자 프롬프트 입력..."
+    },
+    "analyzing": {
+      "message": "분석 중..."
+    },
+    "analyze": {
+      "message": "분석"
+    },
+    "analysisResult": {
+      "message": "분석 결과"
+    },
+    "downloadText": {
+      "message": "텍스트 다운로드"
+    },
+    "setApiKey": {
+      "message": "먼저 설정 탭에서 API 키를 설정해주세요"
+    }
+  },
+  "aiFreeTab": {
+    "message": "무료 AI",
+    "title": {
+      "message": "무료 AI 분석"
+    },
+    "description": {
+      "message": "무료 AI 모델을 사용하여 동영상 분석"
+    }
+  },
+  "settingsTab": {
+    "message": "설정",
+    "title": {
+      "message": "설정"
+    },
+    "description": {
+      "message": "확장 프로그램 설정 구성"
+    },
+    "apiSettings": {
+      "title": {
+        "message": "API 설정"
+      },
+      "description": {
+        "message": "API 키 구성"
+      },
+      "newTitle": {
+        "message": "API 키와 AI 모델 이름 입력"
+      },
+      "apiKey": {
+        "label": {
+          "message": "API 키"
+        },
+        "placeholder": {
+          "message": "API 키 입력"
+        }
+      },
+      "modelName": {
+        "label": {
+          "message": "모델 이름"
+        },
+        "placeholder": {
+          "message": "모델 이름 입력"
+        }
+      },
+      "alerts": {
+        "enterKey": {
+          "message": "설정 탭에서 API 키를 입력해주세요"
+        },
+        "success": {
+          "message": "API 키가 성공적으로 저장되었습니다!"
+        }
+      }
+    }
+  },
+  "helpTab": {
+    "message": "도움말 및 피드백",
+    "title": {
+      "message": "도움말"
+    },
+    "description": {
+      "message": "YouTube Time Saver를 효과적으로 사용하는 방법 배우기"
+    },
+    "howToUse": {
+      "title": {
+        "message": "사용 방법"
+      },
+      "description": {
+        "message": "YouTube Time Saver를 효과적으로 사용하는 방법 배우기"
+      },
+      "steps": {
+        "message": "다음 단계를 따르세요"
+      }
+    },
+    "quickGuide": {
+      "title": {
+        "message": "빠른 가이드"
+      },
+      "steps": {
+        "step1": {
+          "message": "YouTube 동영상 열기"
+        },
+        "step2": {
+          "message": "확장 프로그램 아이콘 클릭"
+        },
+        "step3": {
+          "message": "분석 옵션 선택"
+        },
+        "step4": {
+          "message": "분석 클릭"
+        },
+        "step5": {
+          "message": "결과 확인"
+        }
+      }
+    },
+    "feedback": {
+      "title": {
+        "message": "피드백 보내기"
+      },
+      "description": {
+        "message": "피드백을 보내서 개선에 도움을 주세요"
+      },
+      "placeholder": {
+        "message": "여기에 피드백을 입력하세요..."
+      },
+      "submit": {
+        "message": "피드백 보내기"
+      }
+    }
+  },
+  "aboutTab": {
+    "message": "정보",
+    "title": {
+      "message": "YouTube Time Saver 정보"
+    },
+    "description": {
+      "message": "YouTube에서 시간을 절약할 수 있게 도와주는 강력한 브라우저 확장 프로그램"
+    },
+    "features": {
+      "title": {
+        "message": "기능"
+      },
+      "list": {
+        "youtubeIntegration": {
+          "message": "원활한 YouTube 통합"
+        },
+        "transcripts": {
+          "message": "자막에 빠른 접근"
+        },
+        "aiSummaries": {
+          "message": "다국어 AI 요약"
+        },
+        "apiOptions": {
+          "message": "DeepSeek를 통한 저렴한 API 키 옵션"
+        },
+        "support": {
+          "message": "개발자의 직접적인 지원과 정기적인 업데이트"
+        }
+      }
+    },
+    "author": {
+      "message": "커피 한 잔 사주기"
+    }
   }
 }

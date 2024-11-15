@@ -1,0 +1,287 @@
+{
+  "extensionDescription": {
+    "description": "Extension description",
+    "message": "Sparen Sie Zeit mit sofortigen KI-gestützten Zusammenfassungen von YouTube-Videos"
+  },
+  "extensionName": {
+    "description": "Extension name",
+    "message": "YouTube Time Saver"
+  },
+  "common": {
+    "message": "Allgemein",
+    "save": {
+      "message": "Speichern"
+    },
+    "supportProject": {
+      "message": "Projekt unterstützen"
+    },
+    "languages": {
+      "english": {
+        "message": "English"
+      },
+      "chinese": {
+        "message": "中文"
+      },
+      "japanese": {
+        "message": "日本語"
+      },
+      "korean": {
+        "message": "한국어"
+      },
+      "spanish": {
+        "message": "Español"
+      },
+      "french": {
+        "message": "Français"
+      },
+      "german": {
+        "message": "Deutsch"
+      },
+      "italian": {
+        "message": "Italiano"
+      },
+      "russian": {
+        "message": "Русский"
+      },
+      "portuguese": {
+        "message": "Português"
+      }
+    },
+    "loading": {
+      "message": "Wird geladen..."
+    },
+    "toggleTheme": {
+      "message": "Theme umschalten"
+    },
+    "error": {
+      "message": "Ein Fehler ist aufgetreten"
+    }
+  },
+  "tabs": {
+    "message": "Tabs",
+    "youtube": {
+      "message": "YouTube"
+    },
+    "ai": {
+      "message": "KI-Analyse"
+    },
+    "aiFree": {
+      "message": "Kostenlose KI"
+    },
+    "help": {
+      "message": "Hilfe"
+    },
+    "settings": {
+      "message": "Einstellungen"
+    },
+    "about": {
+      "message": "Über"
+    }
+  },
+  "youtubeTab": {
+    "message": "YouTube-Video",
+    "title": {
+      "message": "YouTube"
+    },
+    "description": {
+      "message": "YouTube-Video-Einstellungen"
+    },
+    "getTranscript": {
+      "message": "Transkript abrufen"
+    },
+    "analyze": {
+      "message": "Analysieren"
+    },
+    "download": {
+      "message": "Herunterladen"
+    }
+  },
+  "aiTab": {
+    "message": "KI-Zusammenfassung",
+    "title": {
+      "message": "KI-Analyse"
+    },
+    "description": {
+      "message": "Analysieren Sie Ihr Video-Transkript mit KI"
+    },
+    "outputLanguage": {
+      "message": "Ausgabesprache"
+    },
+    "apiKey": {
+      "message": "API-Schlüssel"
+    },
+    "enterApiKey": {
+      "message": "Geben Sie Ihren API-Schlüssel ein"
+    },
+    "systemPrompt": {
+      "message": "System-Prompt"
+    },
+    "systemPromptPlaceholder": {
+      "message": "System-Prompt eingeben..."
+    },
+    "userPrompt": {
+      "message": "Benutzer-Prompt"
+    },
+    "userPromptPlaceholder": {
+      "message": "Benutzer-Prompt eingeben..."
+    },
+    "analyzing": {
+      "message": "Analysiere..."
+    },
+    "analyze": {
+      "message": "Analysieren"
+    },
+    "analysisResult": {
+      "message": "Analyseergebnis"
+    },
+    "downloadText": {
+      "message": "Text herunterladen"
+    },
+    "setApiKey": {
+      "message": "Bitte setzen Sie zuerst Ihren API-Schlüssel in den Einstellungen"
+    }
+  },
+  "aiFreeTab": {
+    "message": "Kostenlose KI-Zusammenfassung",
+    "title": {
+      "message": "Kostenlose KI-Analyse"
+    },
+    "description": {
+      "message": "Analysieren Sie Ihr Video mit kostenlosen KI-Modellen"
+    }
+  },
+  "settingsTab": {
+    "message": "Einstellungen",
+    "title": {
+      "message": "Einstellungen"
+    },
+    "description": {
+      "message": "Konfigurieren Sie Ihre Erweiterungseinstellungen"
+    },
+    "apiSettings": {
+      "title": {
+        "message": "API-Einstellungen"
+      },
+      "description": {
+        "message": "Konfigurieren Sie Ihre API-Schlüssel"
+      },
+      "newTitle": {
+        "message": "API-Schlüssel und KI-Modellname eingeben"
+      },
+      "apiKey": {
+        "label": {
+          "message": "API-Schlüssel"
+        },
+        "placeholder": {
+          "message": "API-Schlüssel eingeben"
+        }
+      },
+      "modelName": {
+        "label": {
+          "message": "Modellname"
+        },
+        "placeholder": {
+          "message": "Modellname eingeben"
+        }
+      },
+      "alerts": {
+        "enterKey": {
+          "message": "Bitte geben Sie Ihren API-Schlüssel in den Einstellungen ein"
+        },
+        "success": {
+          "message": "API-Schlüssel erfolgreich gespeichert!"
+        }
+      }
+    }
+  },
+  "helpTab": {
+    "message": "Hilfe & Feedback",
+    "title": {
+      "message": "Hilfe"
+    },
+    "description": {
+      "message": "Lernen Sie, wie Sie YouTube Time Saver effektiv nutzen können"
+    },
+    "howToUse": {
+      "title": {
+        "message": "Verwendung"
+      },
+      "description": {
+        "message": "Lernen Sie, wie Sie YouTube Time Saver effektiv nutzen"
+      },
+      "steps": {
+        "message": "Folgen Sie diesen Schritten"
+      }
+    },
+    "quickGuide": {
+      "title": {
+        "message": "Schnellstart"
+      },
+      "steps": {
+        "step1": {
+          "message": "Öffnen Sie ein YouTube-Video"
+        },
+        "step2": {
+          "message": "Klicken Sie auf das Erweiterungssymbol"
+        },
+        "step3": {
+          "message": "Wählen Sie Ihre Analyseoptionen"
+        },
+        "step4": {
+          "message": "Klicken Sie auf Analysieren"
+        },
+        "step5": {
+          "message": "Sehen Sie sich Ihre Ergebnisse an"
+        }
+      }
+    },
+    "feedback": {
+      "title": {
+        "message": "Feedback senden"
+      },
+      "description": {
+        "message": "Helfen Sie uns, besser zu werden, indem Sie uns Ihr Feedback senden"
+      },
+      "placeholder": {
+        "message": "Geben Sie hier Ihr Feedback ein..."
+      },
+      "submit": {
+        "message": "Feedback senden"
+      }
+    }
+  },
+  "aboutTab": {
+    "message": "Über",
+    "title": {
+      "message": "Über YouTube Time Saver"
+    },
+    "description": {
+      "message": "Eine leistungsstarke Browser-Erweiterung, die Ihnen hilft, Zeit auf YouTube zu sparen"
+    },
+    "features": {
+      "title": {
+        "message": "Funktionen"
+      },
+      "list": {
+        "youtubeIntegration": {
+          "message": "Nahtlose YouTube-Integration"
+        },
+        "transcripts": {
+          "message": "Schneller Zugriff auf Transkripte"
+        },
+        "aiSummaries": {
+          "message": "KI-Zusammenfassungen in mehreren Sprachen"
+        },
+        "apiOptions": {
+          "message": "Kostengünstige API-Schlüssel-Optionen über DeepSeek"
+        },
+        "support": {
+          "message": "Direkter Support und regelmäßige Updates vom Entwickler"
+        }
+      }
+    },
+    "author": {
+      "message": "Unterstützen Sie mich mit einem Kaffee"
+    }
+  }
+}

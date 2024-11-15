@@ -3,3 +3,4 @@ export * from './userKeyStorage';
 export * from './userLangStorage';
 export * from './contentInputStorage';
 export * from './contentOutputStorage';
+export * from './aiModelStorage';

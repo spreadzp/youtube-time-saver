@@ -1,272 +1,218 @@
-// components/AITab.tsx
-
-import React, { useState, useEffect, useCallback } from 'react';
-import OpenAI from 'openai';
-import { handleYouTube } from '../handleYouTube';
-import type { YoutubeData } from '@src/types/youtube.type';
-import { downloadOutputText } from '@src/utils/fileUtils';
-import { systemPromptWithLanguage, userPromptWithLanguage } from '../prompts';
+import { useEffect, useState, useCallback } from 'react';
+import { getMessageFromLocale } from '@extension/i18n/lib/getMessageFromLocale';
+import { type DevLocale } from '@extension/i18n/lib/type';
+import { getUserLanguage, getUserApiKey, getOutputContent } from '@extension/storage';
 import { useStoreData } from '@src/utils/store';
-import { getOutputContent, getUserApiKey, setUserApiKeyStorage, setContentOutputStorage } from '@extension/storage';
+import {
+  systemDefaultPrompt,
+  systemPromptWithLanguage,
+  userDefaultPrompt,
+  userPromptWithLanguage,
+} from '@src/components/prompts';
 import Spinner from '../common/Spinner';
 
+export const AITab = () => {
+  const { transcriptText, videoId } = useStoreData();
+  const [systemLangPrompt, setSystemLangPrompt] = useState(systemPromptWithLanguage('English'));
+  const [userLangPrompt, setUserLangPrompt] = useState(userPromptWithLanguage('English'));
+  const [systemPrompt, setSystemPrompt] = useState(systemDefaultPrompt());
+  const [userPrompt, setUserPrompt] = useState(userDefaultPrompt());
+  const [responseLanguage, setResponseLanguage] = useState('en');
+  const [loading, setLoading] = useState(false);
+  const [analysisResult, setAnalysisResult] = useState<string | null>(null);
+  const [hasKey, setHasKey] = useState(false);
+  const [messages, setMessages] = useState(getMessageFromLocale('en'));
 
-const AITab = () => {
-    const { transcriptText, setApiKey, apiAIKey, videoId } = useStoreData()
-    const [systemPrompt, setSystemPrompt] = useState(systemPromptWithLanguage('русский'));
-    const [userPrompt, setUserPrompt] = useState(userPromptWithLanguage('русский'));
-    const [isTiming, setIsTiming] = useState(false);
-    const [responseLanguage, setResponseLanguage] = useState('en');
-    const [loading, setLoading] = useState(false);
-    const [analysisResult, setAnalysisResult] = useState<string | null>(null);
-    const [clientAI, setClient] = useState<OpenAI | null>(null);
-    const [hasKey, setHasKey] = useState(false)
+  const languages = [
+    { value: 'english', label: messages.common?.languages?.english?.message || 'English' },
+    { value: 'chinese', label: messages.common?.languages?.chinese?.message || '中文' },
+    { value: 'japanese', label: messages.common?.languages?.japanese?.message || '日本語' },
+    { value: 'korean', label: messages.common?.languages?.korean?.message || '한국어' },
+    { value: 'spanish', label: messages.common?.languages?.spanish?.message || 'Español' },
+    { value: 'french', label: messages.common?.languages?.french?.message || 'Français' },
+    { value: 'german', label: messages.common?.languages?.german?.message || 'Deutsch' },
+    { value: 'italian', label: messages.common?.languages?.italian?.message || 'Italiano' },
+    { value: 'russian', label: messages.common?.languages?.russian?.message || 'Русский' },
+    { value: 'portuguese', label: messages.common?.languages?.portuguese?.message || 'Português' },
+  ];
 
-    useEffect(() => {
-        console.log('videoId for getOutputContent :>>', videoId)
-        getOutputContent(videoId).then((content: string) => {
-            console.log("🚀 ~ getOutputContent ~ content:", content)
-            if (content !== '') {
-                setAnalysisResult(content);
-            }
-        })
-    }, [videoId])
+  useEffect(() => {
+    (async () => {
+      const apiKey = await getUserApiKey();
+      if (apiKey !== '') {
+        setHasKey(true);
+      }
+      getUserLanguage().then(lang => {
+        const locale = lang as DevLocale;
+        const newMessages = getMessageFromLocale(locale);
+        setMessages(newMessages);
+      });
+    })();
+  }, []);
 
-    useEffect(() => {
-        // Check if there's an ongoing analysis when component mounts
-        if (videoId) {
-            chrome.runtime.sendMessage(
-                { type: 'CHECK_ANALYSIS_STATUS', videoId },
-                (response) => {
-                    console.log("🚀 ~ useEffect ~ response:", response)
-                    setLoading(response.isRunning);
-                }
-            );
+  useEffect(() => {
+    if (videoId) {
+      getOutputContent(videoId, false).then(content => {
+        if (content) {
+          setAnalysisResult(content);
         }
+      });
+    }
+  }, [videoId]);
 
-        // Listen for analysis completion
-        const messageListener = (message: { type: string; videoId: string }) => {
-            console.log("🚀 ~ messageListener ~ message:", message)
-            if (message.type === 'ANALYSIS_COMPLETE' && message.videoId === videoId) {
-                setLoading(false);
-                getOutputContent(videoId).then((content: string) => {
-                    if (content !== '') {
-                        setAnalysisResult(content);
-                    }
-                });
-            }
-            if (message.type === 'ANALYSIS_ERROR' && message.videoId === videoId) {
-                setLoading(false);
-                // Handle error - maybe show an error message to user
-            }
-        };
-
-        chrome.runtime.onMessage.addListener(messageListener);
-        return () => chrome.runtime.onMessage.removeListener(messageListener);
-    }, [videoId]);
-
-    useEffect(() => {
-
-
-        getUserApiKey()
-            .then((apiKey) => {
-                if (apiKey !== '') {
-                    setHasKey(true)
-                    const client = new OpenAI({
-                        baseURL: 'https://api.deepseek.com',
-                        apiKey: apiKey, //import.meta.env.VITE_API_AI,//apiAIKey,
-                        dangerouslyAllowBrowser: true
-                    });
-                    setClient(client);
-                }
-            })
-
-
-    }, []);
-
-    const handleApiKeySubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        await setUserApiKeyStorage.setApiKey(apiAIKey)
-        const apiKey = await getUserApiKey()
-        if (apiKey !== '') {
-            setHasKey(true)
-            const client = new OpenAI({
-                baseURL: 'https://api.deepseek.com',
-                apiKey: apiKey, //import.meta.env.VITE_API_AI,//apiAIKey,
-                dangerouslyAllowBrowser: true
-            });
-            setClient(client);
-        }
-    };
-
-    const handleDownload = useCallback(() => {
-        if (analysisResult && videoId) {
-            console.log("🚀 ~ handleDownload ~ videoId:", videoId)
-            downloadOutputText(analysisResult, videoId);
-        }
-
-    }, [analysisResult, videoId]);
-    // const handleAnalyze = async (e: React.FormEvent<HTMLFormElement>) => {
-    //     e.preventDefault();
-    //     // if (!transcriptText || !apiAIKey) return;
-
-    //     setLoading(true);
-    //     console.log('transcriptText :>>', transcriptText)
-    //     const videoId = 'exampleVideoId'; // Replace with actual video ID extraction logic
-    //     const data = {} as YoutubeData;
-    //     data.text = transcriptText;
-
-    //     try {
-    //         const result = await handleYouTube(clientAI as OpenAI, videoId, data, userPrompt, systemPrompt, isTiming);
-    //         if (result) {
-    //             await setContentOutputStorage(result as string, videoId)
-    //             const content = await getOutputContent(videoId) as string
-    //             console.log("🚀 ~ handleAnalyze ~ content:", content)
-    //             setAnalysisResult(result as string);
-    //         }
-
-    //     } catch (error) {
-    //         console.error('Error during analysis:', error);
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
-
-    const handleAnalyze = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-
-        const analysisTask = {
-            videoId,
-            data: { text: transcriptText },
-            userPrompt,
-            systemPrompt,
-            isTiming
-        };
-
-        // Send the analysis task to the background script
-        chrome.runtime.sendMessage(
-            {
-                type: 'START_ANALYSIS',
-                payload: analysisTask
-            },
-            (response) => {
-
-                console.log("🚀 ~ handleAnalyze ~ response:", response);
-                setLoading(true);
-                if (!response.success) {
-                    setLoading(false);
-                    // Handle error - maybe show an error message to user
-                }
-            }
-        );
-    };
-
-    if (!hasKey) {
-        return (
-            <div className="p-4">
-                <h2 className="mb-4 text-xl font-bold">Enter API Key</h2>
-                <form onSubmit={handleApiKeySubmit} className="space-y-4">
-                    <input
-                        type="password"
-                        value={apiAIKey || ''}
-                        onChange={(e) => setApiKey(e.target.value)}
-                        placeholder="Enter API Key"
-                        className="w-full rounded border border-gray-300 p-2"
-                    />
-                    <button
-                        type="submit"
-                        className="w-full rounded bg-blue-500 px-4 py-2 font-semibold text-white transition-colors hover:bg-blue-600"
-                    >
-                        Save API Key
-                    </button>
-                </form>
-            </div>
-        );
+  useEffect(() => {
+    if (videoId) {
+      chrome.runtime.sendMessage({ type: 'CHECK_ANALYSIS_STATUS', videoId }, response => {
+        setLoading(response.isRunning);
+      });
     }
 
+    const messageListener = (message: { type: string; videoId: string; success?: boolean; error?: string }) => {
+      if (message.type === 'ANALYSIS_COMPLETE' && message.videoId === videoId) {
+        setLoading(false);
+        getOutputContent(videoId, false).then((content: string) => {
+          if (content) {
+            setAnalysisResult(content);
+          }
+        });
+      }
+      if (message.type === 'ANALYSIS_ERROR' && message.videoId === videoId) {
+        setLoading(false);
+        setAnalysisResult(`Error: ${message.error || 'Unknown error occurred'}`);
+      }
+    };
+
+    chrome.runtime.onMessage.addListener(messageListener);
+    return () => chrome.runtime.onMessage.removeListener(messageListener);
+  }, [videoId]);
+
+  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedLanguage = event.target.value;
+    setSystemLangPrompt(systemPromptWithLanguage(selectedLanguage));
+    setUserLangPrompt(userPromptWithLanguage(selectedLanguage));
+    setResponseLanguage(selectedLanguage);
+  };
+
+  const handleSystemPromptChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setSystemPrompt(event.target.value);
+  };
+
+  const handleUserPromptChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setUserPrompt(event.target.value);
+  };
+
+  const handleAnalyze = useCallback(async () => {
+    if (!transcriptText) return;
+
+    const analysisTask = {
+      videoId,
+      data: { text: transcriptText },
+      systemPrompt: `${systemLangPrompt}\n${systemPrompt}`,
+      userPrompt: `${userLangPrompt}\n${userPrompt}`,
+    };
+
+    chrome.runtime.sendMessage(
+      {
+        type: 'START_ANALYSIS',
+        payload: analysisTask,
+      },
+      response => {
+        setLoading(true);
+        if (!response.success) {
+          setLoading(false);
+          setAnalysisResult('Failed to start analysis. Please try again.');
+        }
+      },
+    );
+  }, [transcriptText, videoId, systemPrompt, userPrompt, systemLangPrompt, userLangPrompt]);
+
+  if (!hasKey) {
     return (
-        <div className="p-4">
-            <h2 className="mb-4 text-xl font-bold">AI Analysis</h2>
-            {loading ? <Spinner text="Analyzing content with AI" /> : <form onSubmit={handleAnalyze} className="space-y-4">
-                {/* <input
-                    type="file"
-                    onChange={handleFileChange}
-                    className="w-full rounded border border-gray-300 p-2"
-                /> */}
-                <textarea
-                    value={systemPrompt}
-                    onChange={(e) => setSystemPrompt(e.target.value)}
-                    placeholder="System Prompt"
-                    className="w-full rounded border border-gray-300 p-2"
-                />
-                <textarea
-                    value={userPrompt}
-                    onChange={(e) => setUserPrompt(e.target.value)}
-                    placeholder="User Prompt (Optional)"
-                    className="w-full rounded border border-gray-300 p-2"
-                />
-                <div className="flex items-center space-x-4">
-                    <label>
-                        <input
-                            type="radio"
-                            value="timestamp"
-                            checked={isTiming}
-                            onChange={() => setIsTiming(true)}
-                        />
-                        Timestamp
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            value="free"
-                            checked={!isTiming}
-                            onChange={() => setIsTiming(false)}
-                        />
-                        Free
-                    </label>
-                </div>
-                <select
-                    value={responseLanguage}
-                    onChange={(e) => setResponseLanguage(e.target.value)}
-                    className="w-full rounded border border-gray-300 p-2"
-                >
-                    <option value="en">English</option>
-                    <option value="ru">Russian</option>
-                    <option value="ch">Chinese</option>
-                    {/* Add more languages as needed */}
-                </select>
-                <button
-                    type="submit"
-                    disabled={loading}
-                    className={`w-full rounded bg-blue-500 px-4 py-2 font-semibold text-white transition-colors ${loading ? 'cursor-not-allowed bg-gray-400' : 'hover:bg-blue-600'
-                        }`}
-                >
-                    {loading ? 'Analyzing...' : 'Analyze'}
-                </button>
-            </form>}
+      <div className="space-y-4">
+        <div className="rounded-lg bg-yellow-50 p-4">
+          <div className="flex">
+            <div className="ml-3">
+              <h3 className="text-sm font-medium text-yellow-800">
+                {messages.tabs?.ai?.message || 'Please set your OpenAI API key in the Settings tab'}
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      <h1 className="mb-4 text-2xl font-bold text-gray-900">{messages.tabs?.ai?.message || 'AI Analysis'}</h1>
+      {loading ? (
+        <Spinner text={messages.aiTab?.analyzing?.message || 'Analyzing...'} />
+      ) : (
+        <div className="space-y-4">
+          <div className="flex flex-col space-y-4">
+            <div className="text-lg font-semibold">{messages.tabs?.ai?.message}</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">{messages.aiTab?.description?.message}</div>
+
+            <div className="flex flex-col space-y-2">
+              <label className="text-sm font-medium">{messages.aiTab?.outputLanguage?.message}</label>
+              <select
+                value={responseLanguage}
+                onChange={handleLanguageChange}
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none">
+                {languages.map(lang => (
+                  <option key={lang.value} value={lang.value}>
+                    {lang.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-medium text-gray-700">
+                {messages.aiTab?.systemPrompt?.message || 'System Prompt'}
+              </label>
+              <textarea
+                value={systemPrompt}
+                onChange={handleSystemPromptChange}
+                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none"
+                rows={4}
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-medium text-gray-700">
+                {messages.aiTab?.userPrompt?.message || 'User Prompt'}
+              </label>
+              <textarea
+                value={userPrompt}
+                onChange={handleUserPromptChange}
+                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none"
+                rows={4}
+              />
+            </div>
+
+            <button
+              onClick={handleAnalyze}
+              disabled={!transcriptText}
+              className="w-full rounded bg-blue-500 px-4 py-2 font-semibold text-white transition-colors hover:bg-blue-600 disabled:bg-gray-400">
+              {messages.aiTab?.analyze?.message || 'Analyze'}
+            </button>
 
             {analysisResult && (
-                <div className="mt-6">
-                    <div className="mb-3 flex items-center justify-between">
-                        <h2 className="text-xl font-bold">Analysis Result</h2>
-                        <button
-                            onClick={() => handleDownload()}
-                            className="rounded bg-green-500 px-3 py-1 text-sm text-white transition-colors hover:bg-green-600"
-                            title="Download Analysis Text"
-                        >
-                            Download Text
-                        </button>
-                    </div>
-                    <textarea
-                        value={analysisResult}
-                        readOnly
-                        className="h-64 w-full resize-none overflow-y-auto rounded border border-gray-300 p-2"
-                    />
+              <div className="mt-4">
+                <h2 className="mb-2 text-lg font-semibold">
+                  {messages.aiTab?.analysisResult?.message || 'Analysis Result'}
+                </h2>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <pre className="whitespace-pre-wrap text-sm">{analysisResult}</pre>
                 </div>
+              </div>
             )}
+          </div>
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default AITab;

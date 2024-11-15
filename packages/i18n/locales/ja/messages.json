@@ -1,0 +1,287 @@
+{
+  "extensionDescription": {
+    "description": "Extension description",
+    "message": "YouTubeビデオのAI駆動の要約をすぐに取得して時間を節約"
+  },
+  "extensionName": {
+    "description": "Extension name",
+    "message": "YouTube Time Saver"
+  },
+  "common": {
+    "message": "共通",
+    "save": {
+      "message": "保存"
+    },
+    "supportProject": {
+      "message": "プロジェクトをサポート"
+    },
+    "languages": {
+      "english": {
+        "message": "English"
+      },
+      "chinese": {
+        "message": "中文"
+      },
+      "japanese": {
+        "message": "日本語"
+      },
+      "korean": {
+        "message": "한국어"
+      },
+      "spanish": {
+        "message": "Español"
+      },
+      "french": {
+        "message": "Français"
+      },
+      "german": {
+        "message": "Deutsch"
+      },
+      "italian": {
+        "message": "Italiano"
+      },
+      "russian": {
+        "message": "Русский"
+      },
+      "portuguese": {
+        "message": "Português"
+      }
+    },
+    "loading": {
+      "message": "読み込み中..."
+    },
+    "toggleTheme": {
+      "message": "テーマを切り替え"
+    },
+    "error": {
+      "message": "エラーが発生しました"
+    }
+  },
+  "tabs": {
+    "message": "タブ",
+    "youtube": {
+      "message": "YouTube"
+    },
+    "ai": {
+      "message": "AI分析"
+    },
+    "aiFree": {
+      "message": "無料AI"
+    },
+    "help": {
+      "message": "ヘルプ"
+    },
+    "settings": {
+      "message": "設定"
+    },
+    "about": {
+      "message": "概要"
+    }
+  },
+  "youtubeTab": {
+    "message": "YouTube動画",
+    "title": {
+      "message": "YouTube"
+    },
+    "description": {
+      "message": "YouTubeビデオの設定"
+    },
+    "getTranscript": {
+      "message": "字幕を取得"
+    },
+    "analyze": {
+      "message": "分析"
+    },
+    "download": {
+      "message": "ダウンロード"
+    }
+  },
+  "aiTab": {
+    "message": "AI要約",
+    "title": {
+      "message": "AI分析"
+    },
+    "description": {
+      "message": "AIを使用してビデオの字幕を分析"
+    },
+    "outputLanguage": {
+      "message": "出力言語"
+    },
+    "apiKey": {
+      "message": "APIキー"
+    },
+    "enterApiKey": {
+      "message": "APIキーを入力してください"
+    },
+    "systemPrompt": {
+      "message": "システムプロンプト"
+    },
+    "systemPromptPlaceholder": {
+      "message": "システムプロンプトを入力..."
+    },
+    "userPrompt": {
+      "message": "ユーザープロンプト"
+    },
+    "userPromptPlaceholder": {
+      "message": "ユーザープロンプトを入力..."
+    },
+    "analyzing": {
+      "message": "分析中..."
+    },
+    "analyze": {
+      "message": "分析"
+    },
+    "analysisResult": {
+      "message": "分析結果"
+    },
+    "downloadText": {
+      "message": "テキストをダウンロード"
+    },
+    "setApiKey": {
+      "message": "先に設定タブでAPIキーを設定してください"
+    }
+  },
+  "aiFreeTab": {
+    "message": "無料AI要約",
+    "title": {
+      "message": "無料AI分析"
+    },
+    "description": {
+      "message": "無料AIモデルを使用してビデオを分析"
+    }
+  },
+  "settingsTab": {
+    "message": "設定",
+    "title": {
+      "message": "設定"
+    },
+    "description": {
+      "message": "拡張機能の設定を構成"
+    },
+    "apiSettings": {
+      "title": {
+        "message": "API設定"
+      },
+      "description": {
+        "message": "APIキーを設定"
+      },
+      "newTitle": {
+        "message": "APIキーとAIモデル名を入力"
+      },
+      "apiKey": {
+        "label": {
+          "message": "APIキー"
+        },
+        "placeholder": {
+          "message": "APIキーを入力"
+        }
+      },
+      "modelName": {
+        "label": {
+          "message": "モデル名"
+        },
+        "placeholder": {
+          "message": "モデル名を入力"
+        }
+      },
+      "alerts": {
+        "enterKey": {
+          "message": "設定タブでAPIキーを入力してください"
+        },
+        "success": {
+          "message": "APIキーが正常に保存されました！"
+        }
+      }
+    }
+  },
+  "helpTab": {
+    "message": "ヘルプとフィードバック",
+    "title": {
+      "message": "ヘルプ"
+    },
+    "description": {
+      "message": "YouTube Time Saverの効果的な使い方を学ぶ"
+    },
+    "howToUse": {
+      "title": {
+        "message": "使い方"
+      },
+      "description": {
+        "message": "YouTube Time Saverの効果的な使い方を学ぶ"
+      },
+      "steps": {
+        "message": "以下の手順に従ってください"
+      }
+    },
+    "quickGuide": {
+      "title": {
+        "message": "クイックガイド"
+      },
+      "steps": {
+        "step1": {
+          "message": "YouTubeビデオを開く"
+        },
+        "step2": {
+          "message": "拡張機能のアイコンをクリック"
+        },
+        "step3": {
+          "message": "分析オプションを選択"
+        },
+        "step4": {
+          "message": "分析をクリック"
+        },
+        "step5": {
+          "message": "結果を確認"
+        }
+      }
+    },
+    "feedback": {
+      "title": {
+        "message": "フィードバックを送信"
+      },
+      "description": {
+        "message": "フィードバックを送信して、改善にご協力ください"
+      },
+      "placeholder": {
+        "message": "フィードバックをここに入力..."
+      },
+      "submit": {
+        "message": "フィードバックを送信"
+      }
+    }
+  },
+  "aboutTab": {
+    "message": "概要",
+    "title": {
+      "message": "YouTube Time Saverについて"
+    },
+    "description": {
+      "message": "YouTubeで時間を節約するための強力なブラウザ拡張機能"
+    },
+    "features": {
+      "title": {
+        "message": "機能"
+      },
+      "list": {
+        "youtubeIntegration": {
+          "message": "シームレスなYouTube統合"
+        },
+        "transcripts": {
+          "message": "字幕への素早いアクセス"
+        },
+        "aiSummaries": {
+          "message": "複数言語でのAI要約"
+        },
+        "apiOptions": {
+          "message": "DeepSeekを通じた手頃なAPIキーオプション"
+        },
+        "support": {
+          "message": "開発者からの直接サポートと定期的なアップデート"
+        }
+      }
+    },
+    "author": {
+      "message": "コーヒーを奢る"
+    }
+  }
+}

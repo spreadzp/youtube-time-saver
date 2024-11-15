@@ -1,30 +1,39 @@
-import { StorageEnum } from '../base/enums';
-import { createStorage } from '../base/base';
-import type { BaseStorage } from '../base/types';
+import type { BaseStorage, ValueOrUpdate } from '../base/types';
+import { StorageKey } from '../constants/storageKeys';
 const chrome = globalThis.chrome;
 
 type LangStorage = BaseStorage<string> & {
-    setLanguage: (language: string) => Promise<void>;
+  setLanguage: (language: string) => Promise<void>;
 };
 
-const storage = createStorage<string>('user-lang-storage-key', 'en', {
-    storageEnum: StorageEnum.Local,
-    liveUpdate: true,
-});
-
-export const getUserLanguage = async () => {
-    const data = await chrome?.storage[StorageEnum.Local].get(['user-lang-storage-key']);
-    let language = Object.values(data)[0];
-    if (!language) {
-        setUserLangStorage.setLanguage('en');
-        language = await storage.get();
-    }
-    return language;
+export const getUserLanguage = async (): Promise<string> => {
+  const result = await chrome.storage.local.get(StorageKey.USER_LANGUAGE);
+  return result[StorageKey.USER_LANGUAGE] || 'en';
 };
-// You can extend it with your own methods
+
 export const setUserLangStorage: LangStorage = {
-    ...storage,
-    setLanguage: async (lang: string) => {
-        await storage.set(lang);
-    },
+  set: async (value: ValueOrUpdate<string>) => {
+    const lang =
+      typeof value === 'function'
+        ? await (value as (prev: string) => Promise<string> | string)(await getUserLanguage())
+        : value;
+    await chrome.storage.local.set({
+      [StorageKey.USER_LANGUAGE]: lang,
+    });
+  },
+  get: async () => {
+    const result = await chrome.storage.local.get(StorageKey.USER_LANGUAGE);
+    return result[StorageKey.USER_LANGUAGE] || 'en';
+  },
+  setLanguage: async (lang: string) => {
+    await chrome.storage.local.set({
+      [StorageKey.USER_LANGUAGE]: lang,
+    });
+  },
+  getSnapshot: () => {
+    return null; // Implement if needed
+  },
+  subscribe: (listener: () => void) => {
+    return () => {}; // Implement if needed
+  },
 };

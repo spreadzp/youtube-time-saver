@@ -1,14 +1,12 @@
 import { StorageEnum } from '../base/enums';
 const chrome = globalThis.chrome;
 
-const getKey = (contentId: string) => `${contentId}-output`;
-export const getOutputContent = async (contentId: string): Promise<string> => {
-    const data = await chrome?.storage[StorageEnum.Session].get([getKey(contentId)]);
-    console.log("🚀 ~ getOutputContent ~ data:", data)
-    const content = Object.values(data)[0] || '';
-    return content;
+export const getOutputContent = async (contentId: string, isFree: boolean): Promise<string> => {
+  const data = await chrome?.storage[StorageEnum.Session].get([`${contentId}${isFree ? '-free' : ''}-output`]);
+  const content = Object.values(data)[0] || '';
+  return isFree && content ? content[0].summary_text : content;
 };
 
-export const setContentOutputStorage = async (contentId: string, content: string) => {
-    await chrome?.storage[StorageEnum.Session].set({ [getKey(contentId)]: content });
+export const setContentOutputStorage = async (contentId: string, content: string, isFree: boolean) => {
+  await chrome?.storage[StorageEnum.Session].set({ [`${contentId}${isFree ? '-free' : ''}-output`]: content });
 };
