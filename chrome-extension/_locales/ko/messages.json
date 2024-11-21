@@ -1,0 +1,40 @@
+{
+  "extensionDescription": {
+    "message": "AI 기반 YouTube 동영상 요약으로 시간을 절약하세요",
+    "description": "확장 프로그램 설명"
+  },
+  "extensionName": {
+    "message": "YouTube Time Saver",
+    "description": "확장 프로그램 이름"
+  },
+  "common": {
+    "message": "공통"
+  },
+  "tabs": {
+    "message": "탭"
+  },
+  "youtubeTab": {
+    "message": "유튜브",
+    "description": "유튜브 동영상 설정"
+  },
+  "aiTab": {
+    "message": "AI 분석",
+    "description": "AI를 사용하여 동영상 스크립트 분석"
+  },
+  "aiFreeTab": {
+    "message": "무료 AI",
+    "description": "무료 AI 모델을 사용하여 동영상 분석"
+  },
+  "settingsTab": {
+    "message": "설정",
+    "description": "확장 프로그램 설정 구성"
+  },
+  "helpTab": {
+    "message": "도움말 및 피드백",
+    "description": "YouTube Time Saver를 효과적으로 사용하는 방법 배우기"
+  },
+  "aboutTab": {
+    "message": "정보",
+    "description": "YouTube에서 시간을 절약할 수 있게 도와주는 강력한 브라우저 확장 프로그램"
+  }
+}

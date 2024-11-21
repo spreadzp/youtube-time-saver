@@ -11,13 +11,6 @@ import type koMessage from '../locales/ko/messages.json';
 import type ruMessage from '../locales/ru/messages.json';
 import type zh_CNMessage from '../locales/zh_CN/messages.json';
 
-export type MessageKey = keyof typeof deMessage &
-  keyof typeof enMessage &
-  keyof typeof esMessage &
-  keyof typeof itMessage &
-  keyof typeof jaMessage &
-  keyof typeof koMessage &
-  keyof typeof ruMessage &
-  keyof typeof zh_CNMessage;
+export type MessageKey = keyof typeof deMessage & keyof typeof enMessage & keyof typeof esMessage & keyof typeof itMessage & keyof typeof jaMessage & keyof typeof koMessage & keyof typeof ruMessage & keyof typeof zh_CNMessage;
 
 export type DevLocale = 'de' | 'en' | 'es' | 'it' | 'ja' | 'ko' | 'ru' | 'zh_CN';

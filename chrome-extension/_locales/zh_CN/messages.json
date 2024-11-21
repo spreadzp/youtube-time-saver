@@ -1,0 +1,40 @@
+{
+  "extensionDescription": {
+    "message": "通过获取即时AI驱动的YouTube视频摘要来节省时间",
+    "description": "Extension description"
+  },
+  "extensionName": {
+    "message": "YouTube Time Saver",
+    "description": "Extension name"
+  },
+  "common": {
+    "message": "通用"
+  },
+  "tabs": {
+    "message": "标签页"
+  },
+  "youtubeTab": {
+    "message": "YouTube视频",
+    "description": "YouTube视频设置"
+  },
+  "aiTab": {
+    "message": "AI摘要",
+    "description": "使用AI分析视频字幕"
+  },
+  "aiFreeTab": {
+    "message": "免费AI摘要",
+    "description": "使用免费AI模型分析您的视频"
+  },
+  "settingsTab": {
+    "message": "设置",
+    "description": "配置您的扩展设置"
+  },
+  "helpTab": {
+    "message": "帮助和反馈",
+    "description": "了解如何有效使用YouTube Time Saver"
+  },
+  "aboutTab": {
+    "message": "关于",
+    "description": "一个强大的浏览器扩展，帮助您在YouTube上节省时间"
+  }
+}

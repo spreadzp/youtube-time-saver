@@ -1,0 +1,40 @@
+{
+  "extensionDescription": {
+    "message": "YouTubeビデオのAI駆動の要約をすぐに取得して時間を節約",
+    "description": "Extension description"
+  },
+  "extensionName": {
+    "message": "YouTube Time Saver",
+    "description": "Extension name"
+  },
+  "common": {
+    "message": "共通"
+  },
+  "tabs": {
+    "message": "タブ"
+  },
+  "youtubeTab": {
+    "message": "YouTube動画",
+    "description": "YouTubeビデオの設定"
+  },
+  "aiTab": {
+    "message": "AI要約",
+    "description": "AIを使用してビデオの字幕を分析"
+  },
+  "aiFreeTab": {
+    "message": "無料AI要約",
+    "description": "無料AIモデルを使用してビデオを分析"
+  },
+  "settingsTab": {
+    "message": "設定",
+    "description": "拡張機能の設定を構成"
+  },
+  "helpTab": {
+    "message": "ヘルプとフィードバック",
+    "description": "YouTube Time Saverの効果的な使い方を学ぶ"
+  },
+  "aboutTab": {
+    "message": "概要",
+    "description": "YouTubeで時間を節約するための強力なブラウザ拡張機能"
+  }
+}

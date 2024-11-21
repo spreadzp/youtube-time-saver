@@ -1,0 +1,40 @@
+{
+  "extensionDescription": {
+    "message": "Sparen Sie Zeit mit sofortigen KI-gestützten Zusammenfassungen von YouTube-Videos",
+    "description": "Extension description"
+  },
+  "extensionName": {
+    "message": "YouTube Time Saver",
+    "description": "Extension name"
+  },
+  "common": {
+    "message": "Allgemein"
+  },
+  "tabs": {
+    "message": "Tabs"
+  },
+  "youtubeTab": {
+    "message": "YouTube-Video",
+    "description": "YouTube-Video-Einstellungen"
+  },
+  "aiTab": {
+    "message": "KI-Zusammenfassung",
+    "description": "Analysieren Sie Ihr Video-Transkript mit KI"
+  },
+  "aiFreeTab": {
+    "message": "Kostenlose KI-Zusammenfassung",
+    "description": "Analysieren Sie Ihr Video mit kostenlosen KI-Modellen"
+  },
+  "settingsTab": {
+    "message": "Einstellungen",
+    "description": "Konfigurieren Sie Ihre Erweiterungseinstellungen"
+  },
+  "helpTab": {
+    "message": "Hilfe & Feedback",
+    "description": "Lernen Sie, wie Sie YouTube Time Saver effektiv nutzen können"
+  },
+  "aboutTab": {
+    "message": "Über",
+    "description": "Eine leistungsstarke Browser-Erweiterung, die Ihnen hilft, Zeit auf YouTube zu sparen"
+  }
+}

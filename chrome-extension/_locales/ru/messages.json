@@ -1,0 +1,40 @@
+{
+  "extensionDescription": {
+    "message": "Экономьте время с мгновенными AI-обработанными сводками YouTube-видео",
+    "description": "Extension description"
+  },
+  "extensionName": {
+    "message": "YouTube Time Saver",
+    "description": "Extension name"
+  },
+  "common": {
+    "message": "Общее"
+  },
+  "tabs": {
+    "message": "Вкладки"
+  },
+  "youtubeTab": {
+    "message": "YouTube видео",
+    "description": "Настройки YouTube видео"
+  },
+  "aiTab": {
+    "message": "AI анализ",
+    "description": "Анализируйте субтитры видео с помощью AI"
+  },
+  "aiFreeTab": {
+    "message": "Бесплатный AI анализ",
+    "description": "Анализируйте видео с помощью бесплатных AI моделей"
+  },
+  "settingsTab": {
+    "message": "Настройки",
+    "description": "Настройте параметры расширения"
+  },
+  "helpTab": {
+    "message": "Помощь и обратная связь",
+    "description": "Получите помощь и поддержку"
+  },
+  "aboutTab": {
+    "message": "О расширении",
+    "description": "Мощное расширение браузера, которое помогает экономить время на YouTube"
+  }
+}

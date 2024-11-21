@@ -1,0 +1,40 @@
+{
+  "extensionDescription": {
+    "message": "Save time by getting instant AI-powered summaries of YouTube videos",
+    "description": "Extension description"
+  },
+  "extensionName": {
+    "message": "YouTube Time Saver",
+    "description": "Extension name"
+  },
+  "common": {
+    "message": "Common"
+  },
+  "tabs": {
+    "message": "Tabs"
+  },
+  "youtubeTab": {
+    "message": "YouTube Video",
+    "description": "YouTube video settings"
+  },
+  "aiTab": {
+    "message": "AI Summary",
+    "description": "Analyze your video transcript using AI"
+  },
+  "aiFreeTab": {
+    "message": "Free AI Summary",
+    "description": "Analyze your video using free AI models"
+  },
+  "settingsTab": {
+    "message": "Settings",
+    "description": "Configure your extension settings"
+  },
+  "helpTab": {
+    "message": "Help & Feedback",
+    "description": "Get help and support"
+  },
+  "aboutTab": {
+    "message": "About",
+    "description": "A powerful browser extension that helps you save time on YouTube"
+  }
+}

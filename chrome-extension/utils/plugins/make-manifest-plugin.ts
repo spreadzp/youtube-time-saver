@@ -22,6 +22,38 @@ const getManifestWithCacheBurst = (): Promise<{ default: chrome.runtime.Manifest
 };
 
 export default function makeManifestPlugin(config: { outDir: string }): PluginOption {
+  function copyLocales(from: string, to: string) {
+    const localesDir = resolve(from, '_locales');
+    const targetLocalesDir = resolve(to, '_locales');
+
+    if (fs.existsSync(localesDir)) {
+      if (!fs.existsSync(targetLocalesDir)) {
+        fs.mkdirSync(targetLocalesDir, { recursive: true });
+      }
+
+      // Copy all locale directories
+      fs.readdirSync(localesDir).forEach(locale => {
+        const sourceLocaleDir = resolve(localesDir, locale);
+        const targetLocaleDir = resolve(targetLocalesDir, locale);
+
+        if (fs.statSync(sourceLocaleDir).isDirectory()) {
+          if (!fs.existsSync(targetLocaleDir)) {
+            fs.mkdirSync(targetLocaleDir, { recursive: true });
+          }
+
+          // Copy messages.json
+          const sourceMessages = resolve(sourceLocaleDir, 'messages.json');
+          const targetMessages = resolve(targetLocaleDir, 'messages.json');
+          if (fs.existsSync(sourceMessages)) {
+            fs.copyFileSync(sourceMessages, targetMessages);
+          }
+        }
+      });
+
+      colorLog(`Locales copied to: ${targetLocalesDir}`, 'success');
+    }
+  }
+
   function makeManifest(manifest: chrome.runtime.ManifestV3, to: string) {
     if (!fs.existsSync(to)) {
       fs.mkdirSync(to);
@@ -43,6 +75,7 @@ export default function makeManifestPlugin(config: { outDir: string }): PluginOp
       const outDir = config.outDir;
       const manifest = await getManifestWithCacheBurst();
       makeManifest(manifest.default, outDir);
+      copyLocales(rootDir, outDir);
     },
   };
 }

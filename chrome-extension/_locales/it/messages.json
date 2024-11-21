@@ -1,0 +1,40 @@
+{
+  "extensionDescription": {
+    "message": "Risparmia tempo ottenendo riassunti istantanei dei video di YouTube basati su AI",
+    "description": "Extension description"
+  },
+  "extensionName": {
+    "message": "YouTube Time Saver",
+    "description": "Extension name"
+  },
+  "common": {
+    "message": "Comune"
+  },
+  "tabs": {
+    "message": "Schede"
+  },
+  "youtubeTab": {
+    "message": "YouTube",
+    "description": "Impostazioni video YouTube"
+  },
+  "aiTab": {
+    "message": "Riepilogo AI",
+    "description": "Analizza la trascrizione del video usando l'AI"
+  },
+  "aiFreeTab": {
+    "message": "Riepilogo AI Gratuito",
+    "description": "Analizza il tuo video usando modelli AI gratuiti"
+  },
+  "settingsTab": {
+    "message": "Impostazioni",
+    "description": "Configura le impostazioni dell'estensione"
+  },
+  "helpTab": {
+    "message": "Aiuto e feedback",
+    "description": "Impara a utilizzare YouTube Time Saver in modo efficace"
+  },
+  "aboutTab": {
+    "message": "Informazioni",
+    "description": "Un'estensione del browser potente che ti aiuta a risparmiare tempo su YouTube"
+  }
+}

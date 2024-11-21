@@ -75,6 +75,7 @@ importers:
       '@extension/storage': workspace:*
       '@extension/tsconfig': workspace:*
       '@extension/vite-config': workspace:*
+      '@google/generative-ai': ^0.21.0
       '@laynezh/vite-plugin-lib-assets': ^0.5.23
       '@types/ws': ^8.5.12
       '@xenova/transformers': ^2.17.2
@@ -87,6 +88,7 @@ importers:
     dependencies:
       '@extension/shared': link:../packages/shared
       '@extension/storage': link:../packages/storage
+      '@google/generative-ai': 0.21.0
       '@xenova/transformers': 2.17.2
       openai: 4.71.1
       webextension-polyfill: 0.12.0
@@ -334,6 +336,7 @@ importers:
       '@extension/tailwindcss-config': workspace:*
       '@extension/tsconfig': workspace:*
       '@extension/vite-config': workspace:*
+      '@google/generative-ai': ^0.21.0
       cross-env: ^7.0.3
       postcss-load-config: ^6.0.1
       react-tabs: ^6.0.2
@@ -346,6 +349,7 @@ importers:
       '@extension/i18n': link:../../packages/i18n
       '@extension/shared': link:../../packages/shared
       '@extension/storage': link:../../packages/storage
+      '@google/generative-ai': 0.21.0
       react-tabs: 6.0.2
       react-tooltip: 5.28.0
       react-youtube: 10.1.0
@@ -899,6 +903,11 @@ packages:
 
   /@floating-ui/utils/0.2.8:
     resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
+    dev: false
+
+  /@google/generative-ai/0.21.0:
+    resolution: {integrity: sha512-7XhUbtnlkSEZK15kN3t+tzIMxsbKm/dSkKBFalj+20NvPKe1kBY7mR2P7vuijEn+f06z5+A8bVGKO0v39cr6Wg==}
+    engines: {node: '>=18.0.0'}
     dev: false
 
   /@huggingface/jinja/0.2.2:

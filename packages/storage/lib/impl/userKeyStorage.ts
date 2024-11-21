@@ -1,32 +1,30 @@
 import { StorageEnum } from '../base/enums';
 import { createStorage } from '../base/base';
-import type { BaseStorage } from '../base/types';
-const chrome = globalThis.chrome;
 
-type KeyStorage = BaseStorage<string> & {
-  setApiKey: (apiKey: string) => Promise<void>;
-};
+interface APIKeys {
+  openai?: string;
+  deepseek?: string;
+  gemini?: string;
+}
 
-const storage = createStorage<string>('user-api-storage-key', '', {
+const storage = createStorage<APIKeys>('user-api-keys', {}, {
   storageEnum: StorageEnum.Local,
   liveUpdate: true,
 });
 
-export const getUserApiKey = async () => {
-  const data = await chrome?.storage[StorageEnum.Local].get(['user-api-storage-key']);
-  let key = Object.values(data)[0] || '';
-  if (!key) {
-    setUserApiKeyStorage.setApiKey('');
-    key = await storage.get();
+export const getUserApiKey = async (provider?: string): Promise<string> => {
+  const keys = await storage.get() || {};
+  if (provider) {
+    return keys[provider as keyof APIKeys] || '';
   }
-
-  return key;
+  // Legacy support - return first available key
+  return keys.deepseek || keys.openai || keys.gemini || '';
 };
 
-// You can extend it with your own methods
-export const setUserApiKeyStorage: KeyStorage = {
-  ...storage,
-  setApiKey: async (apiKey: string) => {
-    await storage.set(apiKey);
-  },
+export const setUserApiKey = async (apiKey: string, provider: string) => {
+  const currentKeys = await storage.get() || {};
+  await storage.set({
+    ...currentKeys,
+    [provider]: apiKey
+  });
 };
