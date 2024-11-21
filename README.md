@@ -59,7 +59,7 @@ This frustration led to the idea of using AI to generate video summaries. With t
 
 2. From Source:
    ```bash
-   git clone https://github.com/amarettococo/youtube-time-saver.git
+   git clone https://github.com/spreadzp/youtube-time-saver.git
    cd youtube-time-saver
    pnpm install
    pnpm build
