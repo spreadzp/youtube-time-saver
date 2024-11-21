@@ -1,6 +1,7 @@
 # YouTube Time Saver - Chrome Extension
-![icon-34](https://github.com/user-attachments/assets/7147bdd0-ed06-4529-8242-a6296c67aff3)
-[![Available in the Chrome Web Store](https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/UV4C4ybeBTsZt43U4xis.png)](https://chromewebstore.google.com/detail/youtube-time-saver/nnhkeljkmadakpchcaflladakgolglhk)
+ ## Now Available on the Chrome Web Store
+  Please visit the [Chrome Web Store](https://chromewebstore.google.com/detail/youtube-time-saver/nnhkeljkmadakpchcaflladakgolglhk) to download and install the extension.
+[![Available in the Chrome Web Store](https://github.com/user-attachments/assets/7147bdd0-ed06-4529-8242-a6296c67aff3)](https://chromewebstore.google.com/detail/youtube-time-saver/nnhkeljkmadakpchcaflladakgolglhk)
 
 AI-powered YouTube video summarizer and transcript analyzer with support for multiple AI providers.
 
